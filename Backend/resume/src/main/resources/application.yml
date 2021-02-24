@@ -1,0 +1,17 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: 0oa869udrAtiJ9n715d6
+            client-secret: WkxcALBsRhVhUvWcDczUnxQjN6Lx2JbO8e6PgnU4
+            scope: openid, email, profile
+        provider:
+          okta:
+            issuer-uri: https://dev-79187440.okta.com/oauth2/default
+  datasource:
+    url: 'jdbc:h2:file:./data/resume'
+  jpa:
+    hibernate:
+      ddl-auto: create

@@ -1,9 +1,6 @@
 package ru.nsu.g.dnavruzshoev.resume.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -15,6 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Builder
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -32,22 +30,17 @@ public class User {
     @NotEmpty(message = "Gender is required")
     private String gender;
     private boolean experience;
-    @Temporal(TemporalType.DATE)
     private Date birthday;
 
-    @NonNull
     @ManyToMany
     List<KeySkill> keySkills;
 
-    @NonNull
     @ManyToMany
     List<LanguageSkill> languageSkills;
 
-    @NonNull
     @ManyToMany
     List<Job> jobs;
 
-    @NonNull
     @ManyToMany
     List<EducationInstitution> educationInstitutions;
 }

@@ -7,7 +7,7 @@ import ru.nsu.g.dnavruzshoev.resume.dto.UserDto;
 import ru.nsu.g.dnavruzshoev.resume.model.User;
 
 @Service
-public class UserMapper implements IMapper<User, UserDto> {
+public class UserModelMapper implements IMapper<User, UserDto> {
 
     private final ModelMapper modelMapper = new ModelMapper();
 

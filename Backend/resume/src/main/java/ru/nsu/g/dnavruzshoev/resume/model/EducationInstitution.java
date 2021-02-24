@@ -1,5 +1,6 @@
 package ru.nsu.g.dnavruzshoev.resume.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class EducationInstitution {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -22,6 +24,6 @@ public class EducationInstitution {
     private String levelEducation;
     private String faculty;
     private String specialization;
-    @Temporal(TemporalType.DATE)
     private Date endDate;
+    private Date startDate;
 }
